@@ -2,7 +2,7 @@ from CsvImporter import CsvImporter
 from DatabaseHandler import DataBaseHandler
 from QueryCreator import QueryCreator
 
-filename = "test.csv"
+filename = "test.csv"  # TODO: Change to argument
 
 csvReader = CsvImporter(filename)
 header = csvReader.getHeder()
@@ -15,5 +15,10 @@ database = DataBaseHandler(
     password="!ChangeMe!",
     database="app_db",
 )
-# print(query_create.create_insert_statement(body[0]))
+
+select_query = query_create.select("id", "1")
+target = database.select(select_query)
+if len(target) > 0:
+    delete_query = query_create.delete("id", "1")
+    database.write(delete_query)
 database.write(query_create.create_insert_statement(body[0]))

@@ -47,3 +47,10 @@ class DataBaseHandler:
         cursor.execute(query)
         self.conn.commit()
         cursor.close()
+
+    def select(self, select_query: str):
+        cursor = self.conn.cursor()
+        cursor.execute(select_query)
+        result = cursor.fetchall()
+        cursor.close()
+        return result
