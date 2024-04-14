@@ -1,13 +1,22 @@
+import argparse
 from CsvImporter import CsvImporter
 from CsvRowReader import CsvRowReader
 from DatabaseHandler import DataBaseHandler
 from QueryCreator import QueryCreator
 
-filename = "test.csv"  # TODO: Change to argument
-table_name = "mst_transfer_control"
-primary_key = "id"
 
-
+parser = argparse.ArgumentParser(prog="oms-dbpy", description="Import CSV to Database")
+parser.add_argument("-c", "--csv", help="CSV filename", required=True)
+parser.add_argument(
+    "-t", "--table_name", help="table name you want to import", required=True
+)
+parser.add_argument(
+    "-p", "--primary_key", help="primary key column name", required=True
+)
+args = parser.parse_args()
+filename = args.csv
+table_name = args.table_name
+primary_key = args.primary_key
 csvReader = CsvImporter(filename)
 header = csvReader.get_header()
 body = csvReader.get_body()
