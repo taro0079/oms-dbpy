@@ -1,0 +1,11 @@
+version: '3'
+services:
+  python3:
+    restart: always
+    build: .
+    container_name: 'python3'
+    network_mode: 'host' # hostのdatabaseに接続する場合に利用する
+    working_dir: '/root/src'
+    tty: true
+    volumes:
+      - .:/root/src
