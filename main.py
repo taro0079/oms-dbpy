@@ -1,9 +1,13 @@
 import argparse
+import os
+
+from dotenv import load_dotenv
 from CsvImporter import CsvImporter
 from CsvRowReader import CsvRowReader
 from DatabaseHandler import DataBaseHandler
 from QueryCreator import QueryCreator
 
+load_dotenv()
 
 parser = argparse.ArgumentParser(prog="oms-dbpy", description="Import CSV to Database")
 parser.add_argument("-c", "--csv", help="CSV filename", required=True)
@@ -22,11 +26,11 @@ header = csvReader.get_header()
 body = csvReader.get_body()
 query_create = QueryCreator(table_name, header)
 database = DataBaseHandler(
-    host="localhost",
-    user="app_user",
-    port="3306",
-    password="!ChangeMe!",
-    database="app_db",
+    host=os.environ["DB_HOST"],
+    user=os.environ["DB_USER"],
+    port=os.environ["DB_PORT"],
+    password=os.environ["DB_PASS"],
+    database=os.environ["DB_NAME"],
 )
 for r in body:
     csv_row_reader = CsvRowReader(header, r)
