@@ -33,7 +33,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/Users/taro_morita/dev/oms-dbpy/dbpy"
+set -gx VIRTUAL_ENV "/Users/awesometaro/dev/oms-dbpy/dbpy"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH
