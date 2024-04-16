@@ -1,4 +1,4 @@
-#!/Users/awesometaro/dev/oms-dbpy/dbpy/bin/python3.12
+#!/Users/taro_morita/dev/oms-dbpy/dbpy/bin/python3.12
 # -*- coding: utf-8 -*-
 import re
 import sys
