@@ -6,7 +6,9 @@ class QueryCreator:
 
     def create_insert_statement(self, row: list[str]):
         apply_column = f"INSERT INTO {self.table_name} ({', '.join(self.columns)}) VALUES ({', '.join(['%s' for _ in self.columns])})"
-        quote_value = ["'" + value + "'" for value in row]
+        quote_value = [
+            "'" + value + "'" if value != "NULL" else "NULL" for value in row
+        ]
         return apply_column % tuple(quote_value)
 
     def select(self, primary_key: str, value: str):

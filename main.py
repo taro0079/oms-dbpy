@@ -31,6 +31,11 @@ database = DataBaseHandler(
     port=os.environ["DB_PORT"],
     password=os.environ["DB_PASS"],
     database=os.environ["DB_NAME"],
+    # host="172.27.250.17",
+    # user="app_user",
+    # port="3306",
+    # password="!ChangeMe!",
+    # database="app_db",
 )
 for r in body:
     csv_row_reader = CsvRowReader(header, r)
