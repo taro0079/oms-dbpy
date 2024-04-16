@@ -1,3 +1,4 @@
 dbpy/lib
 dbpy/include
 __pycache__/*
+.env

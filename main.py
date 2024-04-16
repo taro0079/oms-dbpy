@@ -7,7 +7,7 @@ from CsvRowReader import CsvRowReader
 from DatabaseHandler import DataBaseHandler
 from QueryCreator import QueryCreator
 
-load_dotenv()
+load_dotenv(override=True)
 
 parser = argparse.ArgumentParser(prog="oms-dbpy", description="Import CSV to Database")
 parser.add_argument("-c", "--csv", help="CSV filename", required=True)
@@ -25,6 +25,7 @@ csvReader = CsvImporter(filename)
 header = csvReader.get_header()
 body = csvReader.get_body()
 query_create = QueryCreator(table_name, header)
+print(os.environ["DB_HOST"])
 database = DataBaseHandler(
     host=os.environ["DB_HOST"],
     user=os.environ["DB_USER"],
