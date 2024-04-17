@@ -24,5 +24,5 @@ pip install -r requirements.txt
 
 
 # TODO
-- [ ]  database configuration
+- [x]  database configuration
 - [ ]  write test
