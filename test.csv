@@ -1,9 +1,0 @@
-id	warehouse_code	transfer_name	category_transfer	category_delivery	transport_delivery_code	preference_asc	shop_id	is_active	created_program_id	updated_program_id	created_by	updated_by	lock_version	created_at	updated_at
-1	10	転送名称不明	10	0	1	2	1	1	0	0	0	0	1	2024/01/15	2024/01/15
-2	10	便宜的に命名	50	0	3	3	1	1	0	0	0	0	1	2024/01/15	2024/01/15
-3	10	リピストOMSテスト	70	0	4	4	1	1	0	0	0	0	1	2024/01/15	2024/01/15
-4	10	転送テスト	10	0	5	1	1	1	0	0	0	0	1	2024/01/15	2024/01/15
-5	10	転送データベーステスト	50	1	6	5	1	1	0	0	0	0	1	2024/01/15	2024/01/15
-6	10	テストデータ	70	1	11	7	1	1	0	0	0	0	1	2024/01/15	2024/01/15
-7	10	転送管理テストデータ	10	1	13	8	1	1	0	0	0	0	1	2024/01/15	2024/01/15
-8	10	転送管理データ	50	1	99	6	1	1	0	0	0	0	1	2024/01/15	2024/01/15
